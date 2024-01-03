@@ -7,4 +7,4 @@ tip_percentage = float(
 amount_per_person = (
     (bill_amount * (tip_percentage / 100)) + bill_amount
 ) / people_amount
-print(f"Each person should pay: R {str(round(amount_per_person,1))}")
+print(f"Each person should pay: R{str(round(amount_per_person,1))}")
