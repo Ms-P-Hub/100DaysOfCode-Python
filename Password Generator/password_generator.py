@@ -11,15 +11,15 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 l_sequence = ""
 for i in range(0,nr_letters):
-    l_sequence += letters[random.randint(0,26)]
+    l_sequence += random.choice(letters)
     
 n_sequence = ""
 for i in range(0,nr_numbers):
-    n_sequence += numbers[random.randint(0,9)]
+    n_sequence += random.choice(numbers)
 
 s_sequence = ""
 for i in range(0,nr_symbols):
-    s_sequence += symbols[random.randint(0,9)]
+    s_sequence += random.choice(symbols)
     
 password = l_sequence+n_sequence+s_sequence
 
@@ -27,6 +27,6 @@ print(f"Easy Password : {password}")
 
 password_list = list(password)
 random.shuffle(password_list)
-print(f"Hard Password {''.join(password_list)}")
+print(f"Hard Password : {''.join(password_list)}")
     
 
