@@ -75,13 +75,16 @@ list_of_word =  list(chosen_word)
 hidden_list = []
 
 for i in list_of_word:
-  hidden_list.append("_ ")
+  hidden_list.append("_")
+  
+print(chosen_word)
 
-guess = input("\nGuess a letter: ").lower()
+while "_" in hidden_list:
+  guess = input("\nGuess a letter: ").lower()
 
-for letter in chosen_word:
-    if letter == guess:
-      print("Right")
-    else:
-        print("Wrong")
-        
+  for i in range(len(chosen_word)):
+    if chosen_word[i] == guess:
+      hidden_list[i] = guess
+
+  print(" ".join(hidden_list))
+
