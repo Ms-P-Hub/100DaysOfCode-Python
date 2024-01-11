@@ -81,20 +81,20 @@ print(chosen_word)
 
 lives = 6
 
-while lives > -1:
+while lives != 0:
   guess = input("\nGuess a letter: ").lower()
 
   for i in range(len(chosen_word)):
     if chosen_word[i] == guess:
       hidden_list[i] = guess
+      
+  if "_" not in hidden_list:
+    print("You Win!")
+  else:
+    print(" ".join(hidden_list))
    
   if guess not in list_of_word:
-    print(stages[lives])
     lives -=1
-  
-  print(" ".join(hidden_list))
-
-if lives == -1:
-  print("You Lose!")
-else:
-  print("You Win!")
+    print(stages[lives])
+    if lives == 0:
+      print(f"You Lose!\nThe word was {chosen_word}")
