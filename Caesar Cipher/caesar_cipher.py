@@ -29,11 +29,10 @@ alphabet = [
 
 option = False
 
-while option == False :
+while option == False:
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
-
 
     def encrypt(text, shift):
         alphabet_shift = []
@@ -51,33 +50,33 @@ while option == False :
 
         print(f"The encoded text is '{''.join(encrypted_text)}'.")
 
-
     def decrypt(text, shift):
         alphabet_shift = []
         decrypted_text = []
 
-        for i in range(len(alphabet) - 1, (shift + 1), -1):
+        for i in range((len(alphabet)- shift), len(alphabet)):
             alphabet_shift.append(alphabet[i])
 
-        for i in range(shift - 1, -1, -1):
+        for i in range((len(alphabet)- shift)):
             alphabet_shift.append(alphabet[i])
 
         for letter in text:
             location = alphabet.index(letter)
-            decrypted_text.append(alphabet_shift[location-1])
-            
+            decrypted_text.append(alphabet_shift[location])
+
+        print(alphabet_shift)
         print(f"The decoded text is '{''.join(decrypted_text)}'.")
 
-    if direction == 'encode':
+    if direction == "encode":
         encrypt(text, shift)
-    elif direction == 'decode':
+    elif direction == "decode":
         decrypt(text, shift)
     else:
         print("Invalid option")
-        
+
     option = input("Would you like to start over? Type 'yes' or 'no'.\n").lower()
-    
-    if option == "yes" :
+
+    if option == "yes":
         option = False
     elif option == "no":
         option = True
