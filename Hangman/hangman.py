@@ -1,7 +1,6 @@
 import random
 import hangman_art as art
 import hangman_words as words
-from repl
 
 print(art.logo)
 
