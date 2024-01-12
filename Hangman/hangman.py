@@ -1,74 +1,10 @@
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-logo = ''' 
- _                                             
-| |                                            
-| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
-| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
-| | | | (_| | | | | (_| | | | | | | (_| | | | |
-|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
-                    __/ |                      
-                   |___/    '''
+import random
+import hangman_art as art
                    
-print(logo)             
+print(art.logo)   
+          
 word_list = ["aardvark", "baboon", "camel"]
 
-import random
 chosen_word = random.choice(word_list)
 
 list_of_word =  list(chosen_word)
@@ -90,11 +26,12 @@ while lives != 0:
       
   if "_" not in hidden_list:
     print("You Win!")
+    break
   else:
     print(" ".join(hidden_list))
    
   if guess not in list_of_word:
     lives -=1
-    print(stages[lives])
+    print(art.stages[lives])
     if lives == 0:
       print(f"You Lose!\nThe word was {chosen_word}")
