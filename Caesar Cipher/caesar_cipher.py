@@ -84,6 +84,7 @@ while not option:
     if option == "yes":
         option = False
     elif option == "no":
+        print("GoodBye!")
         option = True
     else:
         print("Invalid option")
