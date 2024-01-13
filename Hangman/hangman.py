@@ -1,6 +1,7 @@
 import random
 import hangman_art as art
 import hangman_words as words
+import os
 
 print(art.logo)
 
@@ -34,6 +35,7 @@ while lives != 0:
         break
 
     elif guess not in list_of_word:
+        os.system("clear")
         lives -= 1
         print(f"{guess} is not in the word. You have {lives} lives remaining.")
         print(art.stages[lives])
