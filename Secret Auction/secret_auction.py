@@ -1,5 +1,7 @@
 import os
+from art import logo
 
+print(logo)
 bids = {}
 another_bid = True
 
