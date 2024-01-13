@@ -7,7 +7,7 @@ another_bid = True
 
 while another_bid:
     name = input("What is your name: ").capitalize()
-    amount = input("What's your bid: R")
+    amount = int(input("What's your bid: R"))
     
     bids[name] = amount
     
