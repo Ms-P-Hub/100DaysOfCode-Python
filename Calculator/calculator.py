@@ -1,3 +1,6 @@
+from art import logo
+import os
+
 def add(a, b):
     return a + b
 
@@ -17,14 +20,15 @@ operators = {"+": add, "*": multiply, "/": divide, "-": subtract}
 
 
 def calculation():
+    print(logo)
     again = True
-    num1 = int(input("Enter the first number: "))
+    num1 = float(input("Enter the first number: "))
 
     while again:
         for key in operators:
             print(key)
         operator = input("Pick an operation from the line above: ")
-        num2 = int(input("Enter the next number: "))
+        num2 = float(input("Enter the next number: "))
 
         equation = operators[operator]
         answer = equation(num1, num2)
@@ -37,6 +41,7 @@ def calculation():
             num1 = answer
             again = True
         elif should_continue == 's':
+            os.system('clear')
             calculation()
         else:
             break
