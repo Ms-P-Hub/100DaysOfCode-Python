@@ -74,15 +74,17 @@ def check_resources(choice):
         print("Running low on Coffee. Sorry.")
     elif resources["water"] < MENU[choice]["ingredients"]["water"]:
         print("Running low on Water. Sorry.")
-    elif resources["milk"] < MENU[choice]["ingredients"]["milk"]:
-        print("Running low on Coffee. Sorry.")
+    elif not choice == "espresso":
+        if resources["milk"] < MENU[choice]["ingredients"]["milk"]:
+            print("Running low on Milk. Sorry.")
     else:
         payment(choice)
         resources["coffee"] = (
             resources["coffee"] - MENU[choice]["ingredients"]["coffee"]
         )
         resources["water"] = resources["water"] - MENU[choice]["ingredients"]["water"]
-        resources["milk"] = resources["milk"] - MENU[choice]["ingredients"]["milk"]
+        if not choice == "espresso":
+            resources["milk"] = resources["milk"] - MENU[choice]["ingredients"]["milk"]
         print(f"Here is your {choice}☕ Enjoy!")
 
 
