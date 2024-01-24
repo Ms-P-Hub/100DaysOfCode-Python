@@ -46,6 +46,8 @@ def machine_on():
         check_resources(choice)
     elif choice == "cappuccino":
         check_resources(choice)
+    else:
+        return print("Powering Off...")
     machine_on()
 
 
