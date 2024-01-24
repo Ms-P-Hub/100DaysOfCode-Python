@@ -36,13 +36,11 @@ def play():
     print(f"Your cards: {player_cards}")
     print(f"Computer's first card: {computer_cards[0]}")
     
-    deal = input("Type 'y' to get another card, type 'n' to pass: ").lower()
-    if deal == 'y':
+    if input("Type 'y' to get another card, type 'n' to pass: ").lower() == 'y':
         another_round()
     else:
-        
-        
-        
+        print("Bye")
+            
         
 def another_round():
     deal_player()
