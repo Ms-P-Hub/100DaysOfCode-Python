@@ -42,17 +42,19 @@ def machine_on():
         )
     elif choice == "latte":
         check_resources(choice)
+        machine_on()
     elif choice == "espresso":
         check_resources(choice)
+        machine_on()
     elif choice == "cappuccino":
         check_resources(choice)
+        machine_on()
     else:
         return print("Powering Off...")
-    machine_on()
 
 
 def payment(choice):
-    due = MENU[choice]["cost"]
+    due = print(f"Your {choice} is R{MENU[choice]['cost']}")
     print("Please insert coins.")
     one = float(input("How many R1: "))
     two = float(input("How many R2: "))
@@ -70,12 +72,12 @@ def payment(choice):
 
 
 def check_resources(choice):
+
     if resources["coffee"] < MENU[choice]["ingredients"]["coffee"]:
         print("Running low on Coffee. Sorry.")
     elif resources["water"] < MENU[choice]["ingredients"]["water"]:
         print("Running low on Water. Sorry.")
-    elif not choice == "espresso":
-        if resources["milk"] < MENU[choice]["ingredients"]["milk"]:
+    elif not choice == "espresso" and resources["milk"] < MENU[choice]["ingredients"]["milk"]:
             print("Running low on Milk. Sorry.")
     else:
         payment(choice)
