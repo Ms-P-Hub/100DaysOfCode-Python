@@ -15,8 +15,8 @@ def hard():
     
     
 def core_functionality(guesses):
-    while guesses > -1:
-        print(f"You have {guesses} attempts remaining to guess the number.")
+    print(f"You have {guesses} attempts remaining to guess the number.")
+    while guesses > 0:
         guess = int(input("Make a guess: "))
         
         if guess > random_number :
@@ -28,6 +28,7 @@ def core_functionality(guesses):
         else:
             print(f"You guessed correctly. Well Done! The answer is {random_number}")
             break
+        print(f"You have {guesses} attempts remaining to guess the number.")
     print(f"You ran out of guesses. You lose! The answer was {random_number}")
         
 if difficulty == 'easy':
