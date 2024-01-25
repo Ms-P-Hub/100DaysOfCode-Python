@@ -20,13 +20,12 @@ class QuizBrain:
         return self.question_number != len(self.question_list)
 
     def check_answer(self, user_answer, current_answer):
-
         if user_answer == current_answer:
             self.score += 1
             print(
-                f"You got it right!\nYour current score is {self.score}/{len(self.question_list)}\n"
+                f"You got it right!\nYour current score is {self.score}/{self.question_number}\n"
             )
         else:
             print(
-                f"That was incorrect!\nYour current score is {self.score}/{len(self.question_list)}\n"
+                f"That was incorrect!\nYour current score is {self.score}/{self.question_number}\n"
             )
