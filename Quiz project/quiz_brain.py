@@ -10,10 +10,6 @@ class QuizBrain:
         answer = input(
             f"Q.{self.question_number}: {self.question_list[self.question_number-1].text}. Type 'True' or 'False': "
         ).capitalize()
-        # # while (not answer == 'True') or (not answer == 'False'):
-        # #     print("Invalid input. Please answer (True/False)")
-        # #     answer = input(f"Q.{self.question_number}: {self.question_list[self.question_number-1].text}. Type 'True' or 'False': ").capitalize()
-        # return answer == self.question_list[self.question_number-1].answer
         self.check_answer(answer, self.question_list[self.question_number - 1].answer)
 
     def still_has_questions(self):
