@@ -9,12 +9,8 @@ class QuizBrain:
         # while (not answer == 'True') or (not answer == 'False'):
         #     print("Invalid input. Please answer (True/False)")
         #     answer = input(f"Q.{self.question_number}: {self.question_list[self.question_number-1].text}. Type 'True' or 'False': ").capitalize()
-        if answer == self.question_list[self.question_number-1].answer:
-            return True
-        return False
+        return answer == self.question_list[self.question_number-1].answer
             
     def still_has_questions(self):
-        if self.question_number != len(self.question_list):
-            return True
-        else:
-            return False
+        return self.question_number != len(self.question_list)
+     
