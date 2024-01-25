@@ -15,4 +15,4 @@ while play.still_has_questions():
         score += 1
         print(f"You got it right!\nYour current score is {score}/{len(question_bank)}\n")
     else:
-         print(f"That was incorrect!\nYour current score is {score}/{len(question_bank)}\n")
+        print(f"That was incorrect!\nYour current score is {score}/{len(question_bank)}\n")
