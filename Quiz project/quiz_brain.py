@@ -6,6 +6,9 @@ class QuizBrain:
     def next_question(self):
         self.question_number += 1
         answer = input(f"Q.{self.question_number}: {self.question_list[self.question_number-1].text}. Type 'True' or 'False': ").capitalize()
+        # while (not answer == 'True') or (not answer == 'False'):
+        #     print("Invalid input. Please answer (True/False)")
+        #     answer = input(f"Q.{self.question_number}: {self.question_list[self.question_number-1].text}. Type 'True' or 'False': ").capitalize()
         if answer == self.question_list[self.question_number-1].answer:
             return True
         return False
