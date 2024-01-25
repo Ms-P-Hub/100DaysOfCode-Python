@@ -13,4 +13,8 @@ class QuizBrain:
             return True
         return False
             
-        
+    def still_has_questions(self):
+        if self.question_number != len(self.question_list):
+            return True
+        else:
+            return False
