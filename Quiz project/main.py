@@ -11,3 +11,6 @@ play = QuizBrain(question_bank)
 
 while play.still_has_questions():
     play.next_question()
+    print()
+    
+print(f"Quiz is complete. Your final score is {play.score} out of {len(question_bank)}")
