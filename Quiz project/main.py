@@ -8,4 +8,7 @@ for question in question_data:
     question_bank.append(new_question)
     
 play = QuizBrain(question_bank)
-play.next_question(question_bank)
+score = 0
+for i in question_bank:
+    if play.next_question():
+        score += 1  
