@@ -1,3 +1,4 @@
+from art import logo
 MENU = {
     "espresso": {
         "ingredients": {
@@ -34,6 +35,7 @@ money = 0
 
 
 def machine_on():
+    print(logo)
     choice = input("What would you like? (espresso/latte/cappuccino):").lower()
 
     if choice == "report":
@@ -42,19 +44,17 @@ def machine_on():
         )
     elif choice == "latte":
         check_resources(choice)
-        machine_on()
     elif choice == "espresso":
         check_resources(choice)
-        machine_on()
     elif choice == "cappuccino":
         check_resources(choice)
-        machine_on()
     else:
         return print("Powering Off...")
-
+    machine_on()
 
 def payment(choice):
-    due = print(f"Your {choice} is R{MENU[choice]['cost']}")
+    print(f"Your {choice} is R{MENU[choice]['cost']}")
+    due = MENU[choice]['cost']
     print("Please insert coins.")
     one = float(input("How many R1: "))
     two = float(input("How many R2: "))
