@@ -8,11 +8,6 @@ for question in question_data:
     question_bank.append(new_question)
 
 play = QuizBrain(question_bank)
-score = 0
 
 while play.still_has_questions():
-    if play.next_question():
-        score += 1
-        print(f"You got it right!\nYour current score is {score}/{len(question_bank)}\n")
-    else:
-        print(f"That was incorrect!\nYour current score is {score}/{len(question_bank)}\n")
+    play.next_question()
