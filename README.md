@@ -23,7 +23,7 @@
 |  19  |           `Instances, State and Higher Order Functions`            |              `Turtle Race`               | **Intermediate**  |       Done       |
 |  20  |       `Build the Snake Game Part 1: Animation & Coordinates`       |           `Snake Game Part 1`            | **Intermediate**  |       Done       |
 |  21  |     `Build the Snake Game Part 2: Inheritance & List Slicing`      |           `Snake Game Part 2`            | **Intermediate**  |   In Progress    |
-| <!-- |                                 22                                 |       `Working with Django Models`       | `Django Todo App` | **Intermediate** | Done |
+<!-- |                                 22                                 |       `Working with Django Models`       | `Django Todo App` | **Intermediate** | Done |
 |  23  |                        `Testing in Python`                         |              `Unit Testing`              | **Intermediate**  |       Done       |
 |  24  |             `Introduction to Data Science with Pandas`             |             `Data Analysis`              | **Intermediate**  |       Done       |
 |  25  |                `Data Visualization with Matplotlib`                |           `Matplotlib Charts`            | **Intermediate**  |       Done       |
