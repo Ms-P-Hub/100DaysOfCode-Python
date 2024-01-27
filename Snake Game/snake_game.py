@@ -16,7 +16,6 @@ for i in position:
     sage.goto(i)
     turtles.append(sage)
 
-# screen.update()
 is_game_on = True
 
 while is_game_on:
