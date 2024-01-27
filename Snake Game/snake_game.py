@@ -4,6 +4,7 @@ screen = Screen()
 screen.setup(600, 600, 0, 0)
 screen.bgcolor("black")
 screen.title("Snake Game!")
+screen.tracer(0)
 
 position = [(0, 0), (20, 0), (40, 0)]
 turtles = []
@@ -15,10 +16,14 @@ for i in position:
     sage.goto(i)
     turtles.append(sage)
 
+# screen.update()
 is_game_on = True
 
 while is_game_on:
-    for i in turtles:
-        i.forward(20)
-
+    screen.update()
+    for i in range(len(turtles)-1,0,-1):
+        turtles[i].goto(turtles[i-1].xcor(),turtles[i-1].ycor())
+    turtles[0].forward(20)  
+    turtles[0].left(90)  
+        
 screen.exitonclick()
