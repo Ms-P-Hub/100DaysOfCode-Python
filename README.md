@@ -20,8 +20,8 @@
 | 16  | `Object Oriented Programming (OOP)` | `Coffee Machine OOP` | **Intermediate** | Done |
 | 17  | `The Quiz Project & the Benefits of OOP` | `Quiz Project` | **Intermediate** | Done |
 | 18  | `Turtle & the Graphical User Interface (GUI)` | `Painting` | **Intermediate** |  Done |
-<!-- | 19  | `Introduction to Django` | `Django Blog` | **Intermediate** | Done |
-| 20  | `Building APIs with Flask` | `RESTful API` | **Intermediate** | Done |
+| 19  | `Instances, State and Higher Order Functions` | `Turtle Race` | **Intermediate** | Done |
+<!-- | 20  | `Building APIs with Flask` | `RESTful API` | **Intermediate** | Done |
 | 21  | `Asynchronous Programming in Python` | `Async Weather App` | **Intermediate** | Done |
 | 22  | `Working with Django Models` | `Django Todo App` | **Intermediate** | Done |
 | 23  | `Testing in Python` | `Unit Testing` | **Intermediate** | Done |
