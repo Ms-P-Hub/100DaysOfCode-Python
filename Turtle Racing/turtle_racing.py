@@ -5,10 +5,11 @@ screen = Screen()
 screen.setup(width=400, height=400, startx=0, starty=0)
 screen.title("Turtle Racing Game!")
 bet = screen.textinput(
-    title="Make your bet", prompt="Which color do you think will win the race?\n1. Yellow\n2. Blue\n3. Red\n4. Purple\n5. Black\n6. Cyan\n7. Green"
+    title="Make your bet",
+    prompt="Which color do you think will win the race?\n1. Yellow\n2. Blue\n3. Red\n4. Purple\n5. Cyan\n7. Green",
 )
 
-colors = ["yellow","blue","red","purple","cyan","green"]
+colors = ["yellow", "blue", "red", "purple", "cyan", "green"]
 all_turtles = []
 start = 150
 for i in range(6):
@@ -24,6 +25,15 @@ if bet:
 
 while is_race_on:
     for turtle in all_turtles:
-        turtle.forward(random.randint(0,10))
+        if turtle.xcor() > 180:
+            print(f"The {turtle.pencolor()} turtle has won!")
+            if turtle.pencolor() == bet.lower():
+                print(f"You have also won your bet!")
+                is_race_on = False
+            else:
+                print(f"You have lost your bet!")
+                is_race_on = False
+        turtle.forward(random.randint(0, 10))
+
 
 screen.exitonclick()
