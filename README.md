@@ -1,7 +1,7 @@
 # 100DaysOfCode-Python
 
 | Day  |                               Topics                               |                 Project                  |    Difficulty     |     Progress     |
-| :--: | :----------------------------------------------------------------: | :--------------------------------------: | :---------------: | :--------------: | ---- |
+| :--: | :----------------------------------------------------------------: | :--------------------------------------: | :---------------: | :--------------: |
 |  1   |         `Working with Variables in Python to Manage Data`          |          `Band Name Generator`           |   **Beginner**    |       Done       |
 |  2   |      `Understanding Data Types and How to Manipulate Strings`      |             `Tip Calculator`             |   **Beginner**    |       Done       |
 |  3   |                `Control Flow and Logical Operators`                |            `Treasure Island`             |   **Beginner**    |       Done       |
@@ -100,4 +100,4 @@
 |  71  |               `DevOps: Infrastructure as Code (IaC)`               |            `Using Terraform`             |   **Advanced**    |   Not Started    |
 |  72  |            `Machine Learning: Time Series Forecasting`             |    `Time Series Forecasting Project`     |   **Advanced**    |   Not Started    |
 |  73  |               `Django: Testing and Test Automation`                |      `Automated Testing in Django`       |   **Advanced**    |   Not Started    |
-|  74  |              `Introduction to Augmented Reality (AR)`              |             `AR with Python`             |   **Advanced**    |   Not Started    | -->  |
+|  74  |              `Introduction to Augmented Reality (AR)`              |             `AR with Python`             |   **Advanced**    |   Not Started    | --> 
