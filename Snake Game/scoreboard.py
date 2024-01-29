@@ -21,9 +21,8 @@ class Score(Turtle):
                 "normal",
             ),
         )
-        
+
     def add_score(self):
         self.score += 1
         self.clear()
         self.update_score()
-        

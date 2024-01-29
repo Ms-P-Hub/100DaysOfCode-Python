@@ -1,8 +1,8 @@
-from food import Food
-from snake import Snake
 from scoreboard import Score
-import turtle
 from turtle import Screen
+from snake import Snake
+from food import Food
+import turtle
 
 
 screen = Screen()
@@ -16,7 +16,6 @@ food = Food()
 score = Score()
 
 screen.listen()
-
 screen.onkeypress(snake.up, "Up")
 screen.onkeypress(snake.down, "Down")
 screen.onkeypress(snake.left, "Left")
