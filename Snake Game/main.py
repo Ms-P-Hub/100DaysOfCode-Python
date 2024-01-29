@@ -33,11 +33,7 @@ while is_game_on:
         score.add_score()
         food.refresh()
 
-    if snake.head.xcor() > 280 or snake.head.xcor() < -280:
-        score.game_over()
-        is_game_on = False
-        
-    elif snake.head.ycor() > 280 or snake.head.ycor() < -280:
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         score.game_over()
         is_game_on = False
 
