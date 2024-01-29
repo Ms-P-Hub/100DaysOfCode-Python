@@ -16,11 +16,7 @@ class Snake:
 
     def create_snake(self):
         for i in POSITIONS:
-            sage = Turtle("circle")
-            sage.penup()
-            sage.color("white")
-            sage.goto(i)
-            self.turtles.append(sage)
+            self.add_body(i)
 
     def move(self):
         for i in range(len(self.turtles) - 1, 0, -1):
@@ -42,3 +38,13 @@ class Snake:
     def down(self):
         if self.head.heading() != UP:
             self.head.setheading(270)
+
+    def extend(self):
+        self.add_body(self.turtles[-2].position())
+
+    def add_body(self, positon):
+        sage = Turtle("circle")
+        sage.penup()
+        sage.color("white")
+        sage.goto(positon)
+        self.turtles.append(sage)
