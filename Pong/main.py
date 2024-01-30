@@ -1,5 +1,6 @@
 from turtle import Screen
 from paddle import Paddle
+from ball import Ball
 import turtle
 
 is_game_on = True
@@ -12,6 +13,7 @@ screen.tracer(0)
 
 right_paddle = Paddle(350, 0)
 left_paddle = Paddle(-350, 0)
+ball = Ball()
 
 screen.listen()
 screen.onkeypress(right_paddle.up, "Up")
