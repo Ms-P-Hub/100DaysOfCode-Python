@@ -1,7 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
-import turtle
+import time
 
 is_game_on = True
 
@@ -24,6 +24,8 @@ screen.onkeypress(left_paddle.down, "s")
 
 
 while is_game_on:
+    time.sleep(0.1)
     screen.update()
+    ball.move()
 
 screen.exitonclick()
