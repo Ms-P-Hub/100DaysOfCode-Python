@@ -1,7 +1,7 @@
 # 100DaysOfCode-Python
 
 | Day  |                               Topics                               |                 Project                  |     Difficulty      |     Progress     |
-| :--: | :----------------------------------------------------------------: | :--------------------------------------: | :-----------------: | :--------------: | ---- |
+| :--: | :----------------------------------------------------------------: | :--------------------------------------: | :-----------------: | :--------------: | 
 |  1   |         `Working with Variables in Python to Manage Data`          |          `Band Name Generator`           |    **Beginner**     |       Done       |
 |  2   |      `Understanding Data Types and How to Manipulate Strings`      |             `Tip Calculator`             |    **Beginner**     |       Done       |
 |  3   |                `Control Flow and Logical Operators`                |            `Treasure Island`             |    **Beginner**     |       Done       |
