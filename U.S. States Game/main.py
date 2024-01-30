@@ -28,11 +28,6 @@ while is_game_on:
         y = int(data[data.state == user_input].y)
         game.goto(x, y)
         game.write(user_input, move=False, font=("Arial", 8, "normal"))
+        
     elif user_input == "Exit" or score == len(states):
         is_game_on = False
-
-with open("./U.S. States Game/missed_states.csv",'a') as file:
-    for i in states:
-        file.write(f"{i}\n")
-    
-screen.exitonclick()
