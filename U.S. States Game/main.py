@@ -29,5 +29,7 @@ while is_game_on:
         game.goto(x, y)
         game.write(user_input, move=False, font=("Arial", 8, "normal"))
 
+    if score == len(states):
+        is_game_on = False
 
 screen.exitonclick()
