@@ -18,16 +18,16 @@ states = data.state.to_list()
 is_game_on = True
 
 while is_game_on:
-    user_input = screen.textinput(f"{score}/{len(states)} States Correct","What's another state name?").title()
-
+    user_input = screen.textinput(
+        f"{score}/{len(states)} States Correct", "What's another state name?"
+    ).title()
 
     if user_input in states:
         score += 1
         x = int(data[data.state == user_input].x)
         y = int(data[data.state == user_input].y)
-        game.goto(x , y)
-        game.write(user_input,move=False,font=("Arial",8,"normal"))
-        
-        
-    
+        game.goto(x, y)
+        game.write(user_input, move=False, font=("Arial", 8, "normal"))
+
+
 screen.exitonclick()
