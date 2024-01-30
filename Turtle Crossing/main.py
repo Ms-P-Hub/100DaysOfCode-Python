@@ -6,9 +6,11 @@ import time
 
 screen = Screen()
 screen.setup(600, 600)
+screen.title("Turtle Crossing")
 screen.tracer(0)
 
 player = Player()
+score = Scoreboard()
 
 screen.listen()
 screen.onkeypress(player.up, "Up")
@@ -20,6 +22,8 @@ while is_game_on:
     screen.update()
 
     if player.finished():
+        score.increase_score()
+        score.update_score()
         player.reset()
 
 
