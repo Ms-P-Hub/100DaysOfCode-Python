@@ -8,6 +8,7 @@ class Paddle(Turtle):
         self.color("white")
         self.turtlesize(5, 1, 0)
         self.penup()
+        
         self.goto(350, 0)
 
     def up(self):
