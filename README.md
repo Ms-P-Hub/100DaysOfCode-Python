@@ -25,9 +25,9 @@
 |  21  |     `Build the Snake Game Part 2: Inheritance & List Slicing`      |           `Snake Game Part 2`            |  **Intermediate**   |       Done       |
 |  22  |                `Build Pong: The Famous Arcade Game`                |               `Build Pong`               |  **Intermediate**   |       Done       |
 |  23  |               `The Turtle Crossing Capstone Project`               |            `Turtle Crossing`             |  **Intermediate**   |       Done       |
-|  24  |                  `Files, Directories and Paths`                    |               `Mail Merge`               |  **Intermediate**   |    In Progress   |
-<!--|  25  |                 `Data Visualization with Matplotlib`               |            `Matplotlib Charts`           |  **Intermediate**   |       Done       |
-|  26  |                 `Introduction to Machine Learning`                 |        `Linear Regression Model`         |  **Intermediate**   |       Done       |
+|  24  |                  `Files, Directories and Paths`                    |               `Mail Merge`               |  **Intermediate**   |       Done       |
+|  25  |           `Working with CSV Data and the Pandas Library`           |            `U.S. States Game`            |  **Intermediate**   |   In Progress    |
+<!--|  26  |                 `Introduction to Machine Learning`                 |        `Linear Regression Model`         |  **Intermediate**   |       Done       |
 |  27  |                 `Machine Learning: Classification`                 |          `Image Classification`          |  **Intermediate**   |       Done       |
 |  28  |                   `Machine Learning: Clustering`                   |           `K-Means Clustering`           |  **Intermediate**   |       Done       |
 |  29  |        `Introduction to Natural Language Processing (NLP)`         |             `Text Analysis`              |  **Intermediate**   |       Done       |
