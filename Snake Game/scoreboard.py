@@ -36,11 +36,11 @@ class Score(Turtle):
         self.update_score()
 
     def update_highscore(self):
-        with open("./Snake Game/highscore.txt", "w") as file:
+        with open("./highscore.txt", "w") as file:
             file.write(str(self.highscore))
 
     def fetch_highscore(self):
-        with open("./Snake Game/highscore.txt", "r") as file:
+        with open("./highscore.txt", "r") as file:
             self.highscore = int(file.readline())
 
         return self.highscore
