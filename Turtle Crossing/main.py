@@ -10,6 +10,7 @@ screen.title("Turtle Crossing")
 screen.tracer(0)
 
 player = Player()
+car = CarManager()
 score = Scoreboard()
 
 screen.listen()
@@ -25,6 +26,9 @@ while is_game_on:
         score.increase_score()
         score.update_score()
         player.reset()
+        
+    car.create_car()
+    car.move_cars()
 
 
 screen.exitonclick()
