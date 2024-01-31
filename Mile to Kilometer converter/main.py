@@ -23,7 +23,7 @@ label_4.grid(column=2, row=1)
 
 
 def button_pressed():
-    label_3.config(text=str(float(user.get()) * 1.6))
+    label_3.config(text=str(float(user.get()) * 1.689))
 
 
 button = Button(text="Calculate", command=button_pressed)
