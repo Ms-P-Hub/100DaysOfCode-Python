@@ -27,9 +27,9 @@
 |  23  |               `The Turtle Crossing Capstone Project`               |            `Turtle Crossing`             |  **Intermediate**   |       Done       |
 |  24  |                  `Files, Directories and Paths`                    |               `Mail Merge`               |  **Intermediate**   |       Done       |
 |  25  |           `Working with CSV Data and the Pandas Library`           |            `U.S. States Game`            |  **Intermediate**   |       Done       |
-|  26  |              `List Comprehension and the NATO Alphabet`            |              `NATO Alphabet`             |  **Intermediate**   |    In Progress   |
-<!--|  27  |                 `Machine Learning: Classification`                 |          `Image Classification`          |  **Intermediate**   |       Done       |
-|  28  |                   `Machine Learning: Clustering`                   |           `K-Means Clustering`           |  **Intermediate**   |       Done       |
+|  26  |              `List Comprehension and the NATO Alphabet`            |              `NATO Alphabet`             |  **Intermediate**   |       Done       |
+|  27  |        `Tkinter, *args, **kwargs and Creating GUI Programs`        |  `Mile to Kilometers Converter Project`  |  **Intermediate**   |   In Progress    |
+<!--|  28  |                   `Machine Learning: Clustering`                   |           `K-Means Clustering`           |  **Intermediate**   |       Done       |
 |  29  |        `Introduction to Natural Language Processing (NLP)`         |             `Text Analysis`              |  **Intermediate**   |       Done       |
 |  30  |              `Building a Simple Chatbot with Python`               |                `Chatbot`                 |  **Intermediate**   |       Done       |
 |  31  |                 `Introduction to Computer Vision`                  |             `Face Detection`             |  **Intermediate**   |       Done       |
