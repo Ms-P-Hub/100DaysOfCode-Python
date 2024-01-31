@@ -15,6 +15,8 @@ screen.title("U.S. States Game")
 data = pd.read_csv("./U.S. States Game/50_states.csv")
 states = data.state.to_list()
 
+guessed_states = []
+
 is_game_on = True
 
 while is_game_on:
@@ -23,6 +25,7 @@ while is_game_on:
     ).title()
 
     if user_input in states:
+        guessed_states.append(user_input)
         score += 1
         x = int(data[data.state == user_input].x)
         y = int(data[data.state == user_input].y)
@@ -31,3 +34,7 @@ while is_game_on:
         
     elif user_input == "Exit" or score == len(states):
         is_game_on = False
+        missed_states = [state for state in states if state not in guessed_states]
+        
+data = pd.DataFrame(missed_states, columns=["Missed States"])
+print(data)
