@@ -1,5 +1,4 @@
 from tkinter import *
-import time
 import math
 
 PINK = "#e2979c"
@@ -10,40 +9,41 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+
 rep = 0
 timer = None
 
-# ------------------------------------------------------#
+
 def reset():
     global rep
     global timer
+
     window.after_cancel(timer)
-    timer_label.config(fg=GREEN,text="TIMER")
+    timer_label.config(fg=GREEN, text="TIMER")
     canvas.itemconfig(time_text, text="00:00")
     tick_label.config()
     rep = 0
 
-    
+
 def start_timer():
     global rep
 
     rep += 1
-    work = WORK_MIN * 60
-    short_break = SHORT_BREAK_MIN * 60
-    long_break = LONG_BREAK_MIN * 60
 
     if rep == 8:
-        count_down(long_break)
+        count_down(LONG_BREAK_MIN * 60)
         timer_label.config(fg=RED, text="LONG BREAK")
     elif rep % 2 == 0:
-        count_down(short_break)
+        count_down(SHORT_BREAK_MIN * 60)
         timer_label.config(fg=PINK, text="BREAK")
     else:
-        count_down(work)
+        count_down(WORK_MIN * 60)
         timer_label.config(fg=GREEN, text="WORK")
 
 
 def count_down(count):
+    global timer
+
     count_min = math.floor(count / 60)
     count_sec = count % 60
 
@@ -53,19 +53,17 @@ def count_down(count):
         count_sec = f"0{count_sec}"
 
     canvas.itemconfig(time_text, text=f"{count_min}:{count_sec}")
+
     if count > 0:
-        global timer
         timer = window.after(1000, count_down, count - 1)
-        
     else:
         start_timer()
         mark = ""
-        sessions = math.floor(rep/2)
-        for i in range(sessions):
+        for i in range(math.floor(rep / 2)):
             mark += "✔️"
-            tick_label.config(fg=GREEN, text=mark, bg=YELLOW, font=(FONT_NAME, 20, "normal"))
+            tick_label.config(fg=GREEN, text=mark)
 
-# ------------------------------------------------------#
+
 window = Tk()
 window.title("Pomorodo Clock")
 window.configure(padx=100, pady=50, bg=YELLOW)
@@ -83,7 +81,6 @@ canvas.create_image(100, 110, image=picture)
 time_text = canvas.create_text(
     100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold")
 )
-
 canvas.grid(column=1, row=1)
 
 start_button = Button(
