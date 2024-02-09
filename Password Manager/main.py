@@ -7,6 +7,7 @@ numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 def generate_password():
+    password_input.delete(first=0,last=END)
 
     l_sequence = [choice(letters) for i in range(randint(0,6))]
     n_sequence = [choice(numbers) for i in range(randint(0,4))]
@@ -35,7 +36,11 @@ def save():
         if is_correct:
             with open("./Password Manager/.credentials.txt", "a") as file:
                 file.write(f"{website} | {email} | {password}\n")
-
+            
+            website_input.delete(first=0,last=END)
+            email_input.delete(first=0,last=END)
+            password_input.delete(first=0,last=END)
+            messagebox.showinfo(title="Successful!",message="Credentials successfully saved!")
 
 window = Tk()
 window.title("Password Manager")
