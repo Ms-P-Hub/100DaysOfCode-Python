@@ -1,6 +1,21 @@
 from tkinter import *
 from tkinter import messagebox
+from random import randint, choice,shuffle
 
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+def generate_password():
+
+    l_sequence = [choice(letters) for i in range(randint(0,6))]
+    n_sequence = [choice(numbers) for i in range(randint(0,4))]
+    s_sequence = [choice(symbols) for i in range(randint(0,2))]
+        
+    password = l_sequence+n_sequence+s_sequence
+    
+    shuffle(password)
+    password_input.insert(0,''.join(password))
 
 def save():
     website = website_input.get()
@@ -50,7 +65,7 @@ email_input.grid(column=1, row=2, columnspan=2)
 password_input = Entry(width=19)
 password_input.grid(column=1, row=3)
 
-generate_button = Button(text="Generate Password", width=15)
+generate_button = Button(text="Generate Password", width=15, command=generate_password)
 generate_button.grid(column=2, row=3)
 
 add_button = Button(text="Add", width=35, command=save)
