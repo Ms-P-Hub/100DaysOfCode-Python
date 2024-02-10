@@ -9,7 +9,20 @@ symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 def search():
     website = website_input.get()
-    messagebox.showinfo(title="Search",message="Searching....")
+    try:
+        with open("./Password Manager/.credentials.txt", "r") as file:
+            credential_list = file.readlines()
+        
+        for i in credential_list:
+            if website in i:
+                content_list = i.split("|")
+                break
+        username = content_list[1]
+        password = content_list[2]
+        
+        messagebox.showinfo(title=f"Searching for {website}",message=f"Username/Email: {username}\nPassword: {password}")
+    except:
+        messagebox.showinfo(title=f"Searching for {website}",message=f"{website} doesn't exist")
 
 def generate_password():
     password_input.delete(first=0,last=END)
