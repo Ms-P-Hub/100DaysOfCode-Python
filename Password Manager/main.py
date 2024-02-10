@@ -7,6 +7,10 @@ letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
+def search():
+    website = website_input.get()
+    messagebox.showinfo(title="Search",message="Searching....")
+
 def generate_password():
     password_input.delete(first=0,last=END)
 
@@ -62,11 +66,11 @@ email_label.grid(column=0, row=2)
 password_label = Label(text="Password")
 password_label.grid(column=0, row=3)
 
-website_input = Entry(width=35)
+website_input = Entry(width=19)
 website_input.focus()
-website_input.grid(column=1, row=1, columnspan=2)
+website_input.grid(column=1, row=1)
 
-email_input = Entry(width=35)
+email_input = Entry(width=38)
 email_input.grid(column=1, row=2, columnspan=2)
 
 password_input = Entry(width=19)
@@ -74,6 +78,9 @@ password_input.grid(column=1, row=3)
 
 generate_button = Button(text="Generate Password", width=15, command=generate_password)
 generate_button.grid(column=2, row=3)
+
+search_button = Button(text="Search", width=15, command=search)
+search_button.grid(column=2, row=1)
 
 add_button = Button(text="Add", width=35, command=save)
 add_button.grid(column=1, row=4, columnspan=2)
