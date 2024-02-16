@@ -44,7 +44,7 @@ def save():
     email = email_input.get().lower()
     password = password_input.get().lower()
     credentials = {website: {"email": email, "password": password}}
-
+    
     if len(website) == 0 or len(email) == 0 or len(password) == 0:
         messagebox.showerror(
             title="Invalid Input", message="Do not leave any fields empty!"
@@ -70,6 +70,7 @@ def save():
             website_input.delete(first=0, last=END)
             email_input.delete(first=0, last=END)
             password_input.delete(first=0, last=END)
+            
             messagebox.showinfo(
                 title="Successful!", message="Credentials successfully saved!"
             )
