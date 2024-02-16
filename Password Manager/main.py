@@ -66,10 +66,10 @@ def save():
             except:
                 with open("./Password Manager/.credentials.json", "w") as file:
                     json.dump(credentials, file, indent=2)
-
-            website_input.delete(first=0, last=END)
-            email_input.delete(first=0, last=END)
-            password_input.delete(first=0, last=END)
+            finally:
+                website_input.delete(first=0, last=END)
+                email_input.delete(first=0, last=END)
+                password_input.delete(first=0, last=END)
             
             messagebox.showinfo(
                 title="Successful!", message="Credentials successfully saved!"
