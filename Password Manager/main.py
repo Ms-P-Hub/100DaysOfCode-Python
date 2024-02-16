@@ -1,46 +1,49 @@
 from pyperclip import *
 from tkinter import *
 from tkinter import messagebox
-from random import randint, choice,shuffle
+from random import randint, choice, shuffle
+import json
 
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",]
+numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+"]
+
 
 def search():
     website = website_input.get()
     try:
-        with open("./Password Manager/.credentials.txt", "r") as file:
-            credential_list = file.readlines()
-        
-        for i in credential_list:
-            if website in i:
-                content_list = i.split("|")
-                break
-        username = content_list[1]
-        password = content_list[2]
-        
-        messagebox.showinfo(title=f"Searching for {website}",message=f"Username/Email: {username}\nPassword: {password}")
+        with open("./Password Manager/.credentials.json", "r") as file:
+            credential_dict = json.load(file)
+
+        messagebox.showinfo(
+            title=f"Searching for {website}",
+            message=f"Username/Email: {credential_dict[website]['username']}\nPassword: {credential_dict[website]['password']}",
+        )
     except:
-        messagebox.showinfo(title=f"Searching for {website}",message=f"{website} doesn't exist")
+        messagebox.showinfo(
+            title=f"Searching for {website}", message=f"{website} doesn't exist"
+        )
+
 
 def generate_password():
-    password_input.delete(first=0,last=END)
+    password_input.delete(first=0, last=END)
 
-    l_sequence = [choice(letters) for i in range(randint(0,6))]
-    n_sequence = [choice(numbers) for i in range(randint(0,4))]
-    s_sequence = [choice(symbols) for i in range(randint(0,2))]
-        
-    password = l_sequence+n_sequence+s_sequence
-    
+    l_sequence = [choice(letters) for i in range(randint(0, 6))]
+    n_sequence = [choice(numbers) for i in range(randint(0, 4))]
+    s_sequence = [choice(symbols) for i in range(randint(0, 2))]
+
+    password = l_sequence + n_sequence + s_sequence
+
     shuffle(password)
-    password_input.insert(0,''.join(password))
-    copy(''.join(password))
+    password_input.insert(0, "".join(password))
+    copy("".join(password))
+
 
 def save():
     website = website_input.get()
     email = email_input.get()
     password = password_input.get()
+    credentials = {website: {"email": email, "password": password}}
 
     if len(website) == 0 or len(email) == 0 or len(password) == 0:
         messagebox.showerror(
@@ -53,13 +56,23 @@ def save():
         )
 
         if is_correct:
-            with open("./Password Manager/.credentials.txt", "a") as file:
-                file.write(f"{website} | {email} | {password}\n")
-            
-            website_input.delete(first=0,last=END)
-            email_input.delete(first=0,last=END)
-            password_input.delete(first=0,last=END)
-            messagebox.showinfo(title="Successful!",message="Credentials successfully saved!")
+            try:
+                with open("./Password Manager/.credentials.json", "r") as file:
+                    data = json.load(file)
+                    data.update(credentials)
+
+                with open("./Password Manager/.credentials.json", "w") as file:
+                    json.dump(data,file, indent=2)
+            except:
+                with open("./Password Manager/.credentials.json", "w") as file:
+                    json.dump(credentials,file, indent=2)
+
+            website_input.delete(first=0, last=END)
+            email_input.delete(first=0, last=END)
+            password_input.delete(first=0, last=END)
+            messagebox.showinfo(
+                title="Successful!", message="Credentials successfully saved!"
+            )
 
 window = Tk()
 window.title("Password Manager")
