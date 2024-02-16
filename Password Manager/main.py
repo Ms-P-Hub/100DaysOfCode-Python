@@ -17,7 +17,7 @@ def search():
 
         messagebox.showinfo(
             title=f"Searching for {website}",
-            message=f"Username/Email: {credential_dict[website]['username']}\nPassword: {credential_dict[website]['password']}",
+            message=f"Username/Email: {credential_dict[website]['email']}\nPassword: {credential_dict[website]['password']}",
         )
     except:
         messagebox.showinfo(
@@ -40,9 +40,9 @@ def generate_password():
 
 
 def save():
-    website = website_input.get()
-    email = email_input.get()
-    password = password_input.get()
+    website = website_input.get().capitalize()
+    email = email_input.get().lower()
+    password = password_input.get().lower()
     credentials = {website: {"email": email, "password": password}}
 
     if len(website) == 0 or len(email) == 0 or len(password) == 0:
@@ -62,10 +62,10 @@ def save():
                     data.update(credentials)
 
                 with open("./Password Manager/.credentials.json", "w") as file:
-                    json.dump(data,file, indent=2)
+                    json.dump(data, file, indent=2)
             except:
                 with open("./Password Manager/.credentials.json", "w") as file:
-                    json.dump(credentials,file, indent=2)
+                    json.dump(credentials, file, indent=2)
 
             website_input.delete(first=0, last=END)
             email_input.delete(first=0, last=END)
@@ -73,6 +73,7 @@ def save():
             messagebox.showinfo(
                 title="Successful!", message="Credentials successfully saved!"
             )
+
 
 window = Tk()
 window.title("Password Manager")
