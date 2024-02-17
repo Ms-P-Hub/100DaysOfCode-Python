@@ -3,13 +3,19 @@ import pandas as pd
 import random
 
 BACKGROUND_COLOR = "#B1DDC6"
-
-data = pd.read_csv("./Flash Card App/data/zulu_words.csv")
-to_learn = data.to_dict(orient="records")
+to_learn = {}
 word_chosen = {}
+
+try:
+    data = pd.read_csv("./Flash Card App/data/zulu_words_to_learn.csv")
+except:
+    data = pd.read_csv("./Flash Card App/data/zulu_words.csv")
+else:
+    to_learn = data.to_dict(orient="records")
 
 def word_generate():
     global word_chosen, flip_timer
+
     window.after_cancel(flip_timer)
     canvas.itemconfig(background_image, image=front_photo)
     word_chosen = random.choice(to_learn)
@@ -24,10 +30,18 @@ def flip_card():
     canvas.itemconfig(background_image, image=back_photo)
 
 
+def save_incorrect():
+    to_learn.remove(word_chosen)
+    print(len(to_learn))
+    data = pd.DataFrame(to_learn)
+    data.to_csv("./Flash Card App/data/zulu_words_to_learn.csv",index=0)
+    word_generate()
+
+
 window = Tk()
 window.title("Flash Card App")
 window.config(background=BACKGROUND_COLOR, padx=50, pady=50)
-flip_timer = window.after(3000, func=flip_card)
+flip_timer = window.after(3000, func=word_generate)
 
 canvas = Canvas(
     width=800, height=526, background=BACKGROUND_COLOR, highlightthickness=0
@@ -41,14 +55,13 @@ language_canvas = canvas.create_text(
 word_canvas = canvas.create_text(400, 263, font=("Ariel", 40, "bold"), text=f"word")
 canvas.grid(column=0, row=0, columnspan=2)
 
-
 correct_pic = PhotoImage(file="./Flash Card App/images/right.png")
 correct_button = Button(image=correct_pic, highlightthickness=0, command=word_generate)
 correct_button.grid(column=1, row=1)
 
 incorrect_pic = PhotoImage(file="./Flash Card App/images/wrong.png")
 incorrect_button = Button(
-    image=incorrect_pic, highlightthickness=0, command=word_generate
+    image=incorrect_pic, highlightthickness=0, command=save_incorrect
 )
 incorrect_button.grid(column=0, row=1)
 
