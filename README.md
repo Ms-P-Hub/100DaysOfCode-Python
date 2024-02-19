@@ -30,11 +30,11 @@
 |  26  |              `List Comprehension and the NATO Alphabet`            |              `NATO Alphabet`             |  **Intermediate**   |       Done       |
 |  27  |        `Tkinter, *args, **kwargs and Creating GUI Programs`        |  `Mile to Kilometers Converter Project`  |  **Intermediate**   |       Done       |
 |  28  |     `Tkinter, Dynamic Typing and the Pomodoro GUI Application`     |             `Pomodoro Clock`             |  **Intermediate**   |       Done       |
-<!--|  29  |        `Introduction to Natural Language Processing (NLP)`         |             `Text Analysis`              |  **Intermediate**   |       Done       |
-|  30  |              `Building a Simple Chatbot with Python`               |                `Chatbot`                 |  **Intermediate**   |       Done       |
-|  31  |                 `Introduction to Computer Vision`                  |             `Face Detection`             |  **Intermediate**   |       Done       |
-|  32  |             `Deep Learning with TensorFlow and Keras`              |         `Neural Network Basics`          |  **Intermediate**   |       Done       |
-|  33  |                     `Advanced Django Concepts`                     |         `Django REST Framework`          |  **Intermediate**   |       Done       |
+|  29  |       `Building a Password Manager GUI App with Tkinter`           |       `Password Manager App Prt 1`       |  **Intermediate**   |       Done       |
+|  30  |    `Errors, Exceptions and JSON Data: Improving the Password`      |       `Password Manager App Prt 2`       |  **Intermediate**   |       Done       |
+|  31  |                 `Flash Card App Capstone Project`                  |             `Flash Card App`             |  **Intermediate**   |       Done       |
+|  32  |          `Send Email (smtplib) & Manage Dates (datetime)`          |        `Automated Birthday Wisher`       |  **Intermediate+**  |    In Progress   |
+<!--|  33  |                     `Advanced Django Concepts`                     |         `Django REST Framework`          |  **Intermediate**   |       Done       |
 |  34  |                   `Working with APIs in Python`                    |            `API Integration`             |  **Intermediate**   |       Done       |
 |  35  |          `Web Development with Flask: Advanced Concepts`           |        `Flask App with Blueprint`        |  **Intermediate**   |       Done       |
 |  36  |              `Building a Full-Stack Web Application`               |             `Full-Stack App`             |    **Advanced**     |   In Progress    |
